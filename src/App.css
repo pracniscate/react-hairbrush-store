@@ -1,32 +1,27 @@
-.App {
-  text-align: center;
+/* use custom CSS variables */
+:root {
+  --blueBell: #A491D3;
+  --shadowBlue: #818AA3;
+  --mediumSpringBud: #C5DCA0;
+  --blond: #F5F2B8;
+  --champagnePink: #F9DAD0;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+body {
+  font-family: 'Slabo 27px', serif !important; /* !important overrides default bootstrap values */
+  background: var(--champagnePink) !important;
+  color: var(--shadowBlue) !important; /* text color */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.text-title {
+  font-family: 'Staatliches', cursive;
+  text-transform: uppercase;
 }
 
-.App-link {
-  color: #61dafb;
+.text-green {
+  color: var(--mediumSpringBud);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.text-bright {
+  color: var(--blond);
 }
