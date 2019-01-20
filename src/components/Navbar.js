@@ -7,7 +7,7 @@ import { ButtonContainer } from './Button';
 export default class Navbar extends Component {
   render() {
     return (
-      <nav className="navbar navbar-expand-sm bg-primary navbar-dark px-sm-5">
+      <NavWrapper className="navbar navbar-expand-sm navbar-dark px-sm-5">
         <Link to='/'>
           {/* make the logo clickable, sends user to homepage */}
           <img src={logo} alt="store" className="navbar-brand" />
@@ -27,7 +27,16 @@ export default class Navbar extends Component {
             My Cart
           </ButtonContainer>
         </Link>
-      </nav>
+      </NavWrapper>
     )
   }
 }
+
+const NavWrapper = styled.nav`
+  background: var(--blueBell);
+  .nav-link{
+    color: var(--blond) !important;
+    font-size: 1.5rem;
+    text-shadow: 2px 2px #ff0000;
+  }
+`;

@@ -9,7 +9,7 @@
 
 body {
   font-family: 'Slabo 27px', serif !important; /* !important overrides default bootstrap values */
-  background: var(--champagnePink) !important;
+  background: white;
   color: var(--shadowBlue) !important; /* text color */
 }
 
