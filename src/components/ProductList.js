@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Product from './Product';
 import Title from './Title';
 import { storeProducts } from '../data';
+import { ProductConsumer } from '../context';
 
 export default class ProductList extends Component {
   state = {
@@ -18,7 +19,12 @@ export default class ProductList extends Component {
             <Title name="our" title="products" />
             <div className="row">
             {/* row for the product */}
-            
+            <ProductConsumer>
+              {/* use a function to get the data */}
+              {value => {
+                return <h1>{value}</h1>
+              }}
+            </ProductConsumer>
             </div>
           </div>
         </div>
