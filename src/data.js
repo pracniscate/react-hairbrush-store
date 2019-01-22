@@ -88,3 +88,15 @@ export const storeProducts = [
     total: 0
   }
 ];
+
+export const detailsProduct = {
+    id: 1,
+    title: "Boar Bristle Paddle Hair Brush",
+    img: "img/product-1.jpg",
+    price: 10,
+    company: "Janrely",
+    description: "Join the most popular color recent years.The rubber material is nice to touch and offers a warmer feel than plastic. This grips help to reduce vibration, enabling a more comfortable and secure grip. It is pretty rugged and design for occidental palm.",
+    inCart: false,
+    count: 0,
+    total: 0
+  };
