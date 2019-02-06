@@ -9,7 +9,8 @@ const ProductContext = React.createContext();
 class ProductProvider extends Component {
   state = {
     products: [],
-    detailsProduct
+    detailsProduct,
+    cart: []
   };
 
   // component lifecycle
@@ -25,7 +26,7 @@ class ProductProvider extends Component {
       products = [...products, singleItem];
     })
     this.setState(() => {
-      return {products}
+      return { products }
     })
   };
 
@@ -37,12 +38,25 @@ class ProductProvider extends Component {
   handleDetails = id => {
     const product = this.getItem(id);
     this.setState(() => {
-      return {detailsProduct: product};
+      return { detailsProduct: product };
     })
   };
 
   addToCart = id => {
-    console.log(`addToCart.id is ${id}`);
+    let tempProducts = [...this.state.products];
+    const index = tempProducts.indexOf(this.getItem(id));
+    const product = tempProducts[index];
+    product.inCart = true;
+    product.count = 1;
+    const price = product.price;
+    product.total = price;
+    this.setState(() => {
+      return { products: tempProducts, cart: [...this.state.cart] };
+    }, 
+    () => {
+      console.log(this.state);
+      }
+    );
   };
 
   render() {
