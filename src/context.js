@@ -10,8 +10,8 @@ class ProductProvider extends Component {
   state = {
     products: [],
     detailsProduct,
-    cart: []
-    modalOpen: true, // set to true for now to see changes
+    cart: [],
+    modalOpen: false,
     modalProduct: detailsProduct
   };
 
@@ -65,13 +65,13 @@ class ProductProvider extends Component {
     // retrieve product
     const product = this.getItem(id);
     this.setState(() => {
-      return { modalProduct: product, modalOpen: true }
+      return { modalProduct: product, modalOpen: true };
     })
   }
 
   closeModal = () => {
     this.setState(() => {
-      return { modalOpen: false }
+      return { modalOpen: false };
     })
   }
 
