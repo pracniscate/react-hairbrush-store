@@ -11,6 +11,8 @@ class ProductProvider extends Component {
     products: [],
     detailsProduct,
     cart: []
+    modalOpen: true, // set to true for now to see changes
+    modalProduct: detailsProduct
   };
 
   // component lifecycle
@@ -59,12 +61,28 @@ class ProductProvider extends Component {
     );
   };
 
+  openModal = id => {
+    // retrieve product
+    const product = this.getItem(id);
+    this.setState(() => {
+      return { modalProduct: product, modalOpen: true }
+    })
+  }
+
+  closeModal = () => {
+    this.setState(() => {
+      return { modalOpen: false }
+    })
+  }
+
   render() {
     return (
       <ProductContext.Provider value={{
         ...this.state,
         handleDetails: this.handleDetails,
-        addToCart: this.addToCart
+        addToCart: this.addToCart,
+        openModal: this.openModal,
+        closeModal: this.closeModal
       }}>
         {/* return all children within this component */}
         {this.props.children}
