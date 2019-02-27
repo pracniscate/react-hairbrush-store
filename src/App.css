@@ -25,3 +25,23 @@ body {
 .text-bright {
   color: var(--blond);
 }
+
+.btn-black {
+  background: transparent;
+  text-transform: capitalize;
+  font-size: 0.9rem !important;
+  color: black;
+  border-radius: 0 !important;
+  border: 0.1rem solid black !important;
+}
+
+.btn-black:hover {
+  background: pink !important;
+  color: white !important;
+}
+
+.cart-icon {
+  cursor: pointer;
+  font-size: 1.3rem;
+  color: var(--mediumSpringBud);
+}
